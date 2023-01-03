@@ -1,2 +1,15 @@
+<h1 class="green">{{msg}}</h1>
+<h2 >ABhishek Jha</h2>
+{{error1}}
+<ol *ngFor="let i of data1">
+<li>{{i.name}} </li>
+</ol>
+<input  [(ngModel)]="name1" type="text" name="name" id="name" #name>
+<h3>{{name1}}</h3>
+<button (click)="logMsg(name.value)">Log</button>
+<app-home (childData)="msg=$event" [parentData]="data"></app-home>
+<app-employeelist>Employees:</app-employeelist>
+<app-employeedetail>Details:</app-employeedetail>
+
 
 <router-outlet></router-outlet>
