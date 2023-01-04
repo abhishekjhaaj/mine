@@ -1,4 +1,4 @@
-import { getCurrencySymbol } from '@angular/common';
+import { JsonPipe, getCurrencySymbol } from '@angular/common';
 import { Component } from '@angular/core';
 import { ViewtestService } from './viewtest.service';
 
@@ -15,7 +15,14 @@ export class AppComponent {
   msg="";
   data1: any;
   error1: any;
-
+inputValue: any;
+amount=200.012;
+currentdate= new Date();
+dataChange()
+{
+  console.log(this.inputValue||JSON);
+  
+}
   constructor(private viewTestService:ViewtestService){
     this.viewTestService.getViewTest().subscribe(data=>
       {

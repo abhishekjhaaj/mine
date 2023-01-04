@@ -1,5 +1,7 @@
-<h1 class="green">{{msg}}</h1>
-<h2 >ABhishek Jha</h2>
+<h1 class="green">{{msg}}{{amount| currency:'INR'}} </h1>
+<h2 >{{currentdate|date:'dd-MM-yyyy'}}</h2>
+<input type="email" name="email" id="email" (change)="dataChange()" [(ngModel)]="inputValue">
+<h1>{{inputValue}} </h1>
 {{error1}}
 <ol *ngFor="let i of data1">
 <li>{{i.name}} </li>
@@ -10,6 +12,8 @@
 <app-home (childData)="msg=$event" [parentData]="data"></app-home>
 <app-employeelist>Employees:</app-employeelist>
 <app-employeedetail>Details:</app-employeedetail>
+<app-login></app-login>
+<app-register></app-register>
 
 
 <router-outlet></router-outlet>

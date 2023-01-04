@@ -14,7 +14,7 @@ export class ViewtestService {
   constructor(private http:HttpClient) { }
 
   getViewTest():Observable<IEmployee[]>{
-   return this.http.get<IEmployee[]>('https://excptionalpanaceasolutions.000webhostapp.com/view.php')
+   return this.http.get<IEmployee[]>('https://exceptionalpanaceasolutions.000webhostapp.com/view.php')
    .pipe(
     catchError(this.handleError)
   );
@@ -38,11 +38,11 @@ export class ViewtestService {
       // The response body may contain clues as to what went wrong.
       console.error(
        `Backend returned code ${error.status}, body was: `, error.error);
-       errormsg='Backend returned code ${error.status}, body was: `, error.error)';
+       errormsg=`Backend returned code ${error.status}, body was: `, error.error;
 
     }
     // Return an observable with a user-facing error message.
     errormsg+='Something bad happened; please try again later.'
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(() => new Error(errormsg));
   }
 }
